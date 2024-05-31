@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    // spread operator 
+
+    const arr1 = [1, 2, 3]
+    const arr2 = [11, 12, 13]
+
+    //spread the array 
+    const newArr1 = [...arr1]
+    console.log(newArr1)
+    // output [1, 2, 3]
+
+    //merge array 
+    const newArr2 = [...arr1, ...arr2]
+    console.log(newArr2)
+    // output [1 , 2 , 3 , 11 , 12 , 13 ]
+
+    //compose array
+    const newArr3 = [100, ...arr1, ...arr2, 200]
+    console.log(newArr3)
+    // output [100, 1 , 2 , 3 , 11 , 12 , 13 , 200]
+
+
+    // string 
+
+    const name = "Anshi"
+    const name2 = "Yadav"
+    console.log([...name])
+    // output ['A', 'n', 's', 'h', 'i']
+
+    console.log([...name, ...name2])
+    // output ['A', 'n', 's', 'h', 'i', 'Y', 'a', 'd', 'a', 'v']
+
+    console.log(["hello", ...name, "World"])
+    // output ['hello', 'A', 'n', 's', 'h', 'i', 'World']
+
+
+
+    const student1 = { name: "Archit", rollNo: 12 }
+    const student2 = { name: "Pratik", rollNo: 30, city: "Mumbai" }
+
+    // use to shallow clone(copy memory reference ) of the object 
+    const newStudent = { ...student1 }
+    console.log(student1)
+    //output { name: "Archit", rollNo: 12 }
+
+    const newStudent2 = { ...student1, ...student2 }
+    console.log(newStudent2)
+    //output {name: 'Pratik', rollNo: 30, city: 'Mumbai'}
+
+
+
+    // rest operator 
+    // pack inside an array
+
+    function addFunc(n1, n2, ...numbers) { // it is rest operetor
+        console.log(numbers)
+        let res = 0
+        for (let num of numbers) {
+            res += num
+        }
+        return res
+    }
+
+    console.log(addFunc(3, 4, 5))
+    // output [5] 5
+
+    const number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    console.log(addFunc(...number)) // here it is spread operator
+    // output 45
+
+
+    const numberFromApi = [1, 2, 3, 4, 5, 6]
+
+
+
+</script>
+
+</html>
